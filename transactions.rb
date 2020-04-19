@@ -34,4 +34,4 @@ class Transactions
 end
 
 x = Transactions.new
-assert x.transactions
+assert x.transactions.size == 0
