@@ -44,7 +44,7 @@ class Transactions
         if last.nil?
             0
         else
-            2
+            @transactions.select { |t| t.to == account }.first.points
         end
     end
 end
