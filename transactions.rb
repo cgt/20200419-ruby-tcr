@@ -48,7 +48,7 @@ end
 x = Transactions.new
 assert x.amount == 0
 
-assert x.balance("Alice") == 0
+assert x.balance("Bob") == 0
 
 x.send_points(from: "Alice", to: "Bob", points: 2)
 assert x.amount == 1
