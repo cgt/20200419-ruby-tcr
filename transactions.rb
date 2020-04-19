@@ -33,6 +33,10 @@ class Transactions
         t = Transaction.new(previous: nil, from: from, to: to, points: points)
         @transactions << t
     end
+
+    def last
+        transactions.last
+    end
 end
 
 x = Transactions.new
