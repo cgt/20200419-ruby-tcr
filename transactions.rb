@@ -22,7 +22,7 @@ b = Transaction.new(previous: a, from: "Bob", to: "Alice", points: 2)
 assert b.previous == a
 
 
-class Transactions
+class Bank
     def initialize
         @transactions = []
     end
@@ -61,7 +61,7 @@ class Transactions
     end
 end
 
-x = Transactions.new
+x = Bank.new
 assert x.amount == 0
 
 assert x.balance("Alice") == 0
