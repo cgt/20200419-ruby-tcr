@@ -40,7 +40,7 @@ assert x.transactions.size == 0
 
 x.send_points(from: "Alice", to: "Bob", points: 2)
 assert x.transactions.size == 1
-assert x.transactions.last
+assert x.transactions.last.from == "Alice"
 
 x.send_points(from: "Bob", to: "Alice", points: 2)
 assert x.transactions.size == 2
