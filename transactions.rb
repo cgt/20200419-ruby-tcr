@@ -18,8 +18,8 @@ assert a.previous == nil
 assert a.from == "Alice"
 assert a.to == "Bob"
 
-t2 = Transaction.new(previous: a, from: "Bob", to: "Alice", points: 2)
-assert t2.previous == a
+b = Transaction.new(previous: a, from: "Bob", to: "Alice", points: 2)
+assert b.previous == a
 
 
 class Transactions
