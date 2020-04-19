@@ -47,6 +47,7 @@ assert x.amount == 0
 x.send_points(from: "Alice", to: "Bob", points: 2)
 assert x.amount == 1
 assert x.last.from == "Alice"
+assert x.last.previous == nil
 
 x.send_points(from: "Bob", to: "Alice", points: 2)
 assert x.amount == 2
