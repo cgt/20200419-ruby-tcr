@@ -39,3 +39,4 @@ x = Transactions.new
 assert x.transactions.size == 0
 
 x.send_points(from: "Alice", to: "Bob", points: 2)
+assert x.transactions.size == 1
