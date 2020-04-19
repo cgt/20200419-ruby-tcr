@@ -3,14 +3,15 @@ def assert(bool)
 end
 
 class Transaction
-    attr_reader :from, :to
+    attr_reader :previous, :from, :to
 
-    def initialize(from:, to:)
+    def initialize(previous:, from:, to:)
+        @previous = previous
         @from = from
         @to = to
     end
 end
 
-t = Transaction.new(from: "Alice", to: "Bob")
+t = Transaction.new(previous: nil, from: "Alice", to: "Bob")
 assert t.from == "Alice"
 assert t.to == "Bob"
