@@ -41,11 +41,7 @@ class Transactions
     end
 
     def balance(account)
-        if last.nil?
-            deposits(account) - withdrawals(account)
-        else
-            deposits(account) - withdrawals(account)
-        end
+        deposits(account) - withdrawals(account)
     end
 
     private
