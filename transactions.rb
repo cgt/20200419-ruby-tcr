@@ -55,6 +55,10 @@ class Transactions
             deposits - withdrawals
         end
     end
+
+    private
+
+
 end
 
 x = Transactions.new
