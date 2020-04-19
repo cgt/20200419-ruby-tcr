@@ -58,7 +58,12 @@ class Transactions
 
     private
 
-
+    def deposits(account)
+        @transactions
+            .select { |t| t.to == account }
+            .map { |t| t.points }
+            .reduce(0) { |sum, points| sum + points }
+    end
 end
 
 x = Transactions.new
