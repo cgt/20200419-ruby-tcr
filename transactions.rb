@@ -23,6 +23,8 @@ assert t2.previous == t
 
 
 class Transactions
+    attr_reader :transactions
+
     def initialize
         @transactions = []
     end
