@@ -70,6 +70,7 @@ assert t1.from == "Alice"
 assert t1.previous == nil
 
 assert x.balance("Bob") == 2
+assert x.balance("Bob") == 2
 
 x.send_points(from: "Bob", to: "Alice", points: 2)
 assert x.amount == 2
