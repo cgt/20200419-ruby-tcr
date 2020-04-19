@@ -2,8 +2,7 @@ def assert(bool)
     raise RuntimeError unless bool
 end
 
-def assert_throws(&block)
-    exception_class = RuntimeError
+def assert_throws(exception_class, &block)
     begin
         block.call
     rescue => err
@@ -13,7 +12,7 @@ def assert_throws(&block)
     end
 end
 
-assert_throws do
+assert_throws(RuntimeError) do
     raise RuntimeError.new
 end
 
