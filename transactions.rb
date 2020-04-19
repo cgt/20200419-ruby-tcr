@@ -25,6 +25,7 @@ assert b.previous == a
 class Bank
     def initialize
         @transactions = []
+        @accounts = []
     end
 
     def send_points(from:, to:, points:)
@@ -45,7 +46,7 @@ class Bank
     end
 
     def open_account(name)
-
+        @accounts << name
     end
 
     private
