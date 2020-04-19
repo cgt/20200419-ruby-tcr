@@ -29,7 +29,7 @@ class Transactions
         @transactions = []
     end
 
-    def new_transaction(from:, to:, points:)
+    def send_points(from:, to:, points:)
         t = Transaction.new(previous: nil, from: from, to: to, points: points)
         @transactions << t
     end
@@ -38,4 +38,4 @@ end
 x = Transactions.new
 assert x.transactions.size == 0
 
-x.new_transaction(from: "Alice", to: "Bob", points: 2)
+x.send_points(from: "Alice", to: "Bob", points: 2)
