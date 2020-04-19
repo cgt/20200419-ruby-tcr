@@ -15,7 +15,7 @@ end
 class DerivedFromRuntimeError < RuntimeError
 end
 
-assert_throws(RuntimeError) do
+assert_throws RuntimeError do
     raise DerivedFromRuntimeError.new
 end
 
