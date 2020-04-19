@@ -13,13 +13,13 @@ class Transaction
     end
 end
 
-t = Transaction.new(previous: nil, from: "Alice", to: "Bob", points: 2)
-assert t.previous == nil
-assert t.from == "Alice"
-assert t.to == "Bob"
+a = Transaction.new(previous: nil, from: "Alice", to: "Bob", points: 2)
+assert a.previous == nil
+assert a.from == "Alice"
+assert a.to == "Bob"
 
-t2 = Transaction.new(previous: t, from: "Bob", to: "Alice", points: 2)
-assert t2.previous == t
+t2 = Transaction.new(previous: a, from: "Bob", to: "Alice", points: 2)
+assert t2.previous == a
 
 
 class Transactions
