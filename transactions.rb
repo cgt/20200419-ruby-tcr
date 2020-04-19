@@ -28,7 +28,7 @@ class Transactions
     end
 
     def send_points(from:, to:, points:)
-        t = Transaction.new(previous: nil, from: from, to: to, points: points)
+        t = Transaction.new(previous: last, from: from, to: to, points: points)
         @transactions << t
     end
 
@@ -54,3 +54,4 @@ x.send_points(from: "Bob", to: "Alice", points: 2)
 assert x.amount == 2
 t2 = x.last
 assert t2.from == "Bob"
+assert t2.previous == t1
