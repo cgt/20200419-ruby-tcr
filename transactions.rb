@@ -39,6 +39,10 @@ class Transactions
     def last
         @transactions.last
     end
+
+    def balance(account)
+
+    end
 end
 
 x = Transactions.new
