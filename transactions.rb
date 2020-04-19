@@ -4,3 +4,5 @@ end
 
 assert true
 
+class Transaction
+end
