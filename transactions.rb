@@ -44,6 +44,9 @@ class Bank
         deposits(account) - withdrawals(account)
     end
 
+    def open_account(name)
+    end
+
     private
 
     def deposits(account)
