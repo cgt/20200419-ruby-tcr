@@ -9,6 +9,9 @@ def assert_throws(&block)
     end
 end
 
+assert_throws do
+end
+
 class Transaction
     attr_reader :previous, :from, :to, :points
 
