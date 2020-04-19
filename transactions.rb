@@ -30,7 +30,8 @@ class Transactions
     end
 
     def new_transaction(from:, to:, points:)
-        Transaction.new(previous: nil, from: from, to: to, points: points)
+        t = Transaction.new(previous: nil, from: from, to: to, points: points)
+        @transactions << t
     end
 end
 
