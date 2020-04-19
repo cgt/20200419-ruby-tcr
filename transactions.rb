@@ -42,7 +42,7 @@ class Transactions
 
     def balance(account)
         if last.nil?
-            0
+            deposits(account) - withdrawals(account)
         else
             deposits(account) - withdrawals(account)
         end
