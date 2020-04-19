@@ -28,7 +28,7 @@ class Bank
     end
 
     def send_points(from:, to:, points:)
-        t = Transaction.new(previous: last, from: from, to: to, points: points)
+        t = Transaction.new(previous: last_transaction, from: from, to: to, points: points)
         @transactions << t
     end
 
@@ -36,7 +36,7 @@ class Bank
         @transactions.size
     end
 
-    def last
+    def last_transaction
         @transactions.last
     end
 
@@ -69,7 +69,7 @@ assert bank.balance("Bob") == 0
 
 bank.send_points(from: "Alice", to: "Bob", points: 2)
 assert bank.amount == 1
-t1 = bank.last
+t1 = bank.last_transaction
 assert t1.from == "Alice"
 assert t1.previous == nil
 
@@ -78,7 +78,7 @@ assert bank.balance("Bob") == 2
 
 bank.send_points(from: "Bob", to: "Alice", points: 2)
 assert bank.amount == 2
-t2 = bank.last
+t2 = bank.last_transaction
 assert t2.from == "Bob"
 assert t2.previous == t1
 
