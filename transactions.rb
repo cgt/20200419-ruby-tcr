@@ -13,5 +13,6 @@ class Transaction
 end
 
 t = Transaction.new(previous: nil, from: "Alice", to: "Bob")
+assert t.previous == nil
 assert t.from == "Alice"
 assert t.to == "Bob"
