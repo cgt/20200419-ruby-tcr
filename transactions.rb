@@ -3,10 +3,11 @@ def assert(bool)
 end
 
 def assert_throws(&block)
+    exception_class = RuntimeError
     begin
         block.call
     rescue => err
-        fail unless err.class == RuntimeError
+        fail unless err.class == exception_class
     else
         fail "did not raise exception"
     end
