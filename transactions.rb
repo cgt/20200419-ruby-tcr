@@ -45,6 +45,7 @@ class Bank
     end
 
     def open_account(name)
+
     end
 
     private
