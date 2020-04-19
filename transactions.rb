@@ -81,7 +81,7 @@ assert bank.balance("Bob") == 0
 
 begin
     bank.open_account("Alice")
-rescue RuntimeError
+rescue
 else
     fail
 end
