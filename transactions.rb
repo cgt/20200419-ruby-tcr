@@ -61,26 +61,26 @@ class Bank
     end
 end
 
-x = Bank.new
-assert x.amount == 0
+bank = Bank.new
+assert bank.amount == 0
 
-assert x.balance("Alice") == 0
-assert x.balance("Bob") == 0
+assert bank.balance("Alice") == 0
+assert bank.balance("Bob") == 0
 
-x.send_points(from: "Alice", to: "Bob", points: 2)
-assert x.amount == 1
-t1 = x.last
+bank.send_points(from: "Alice", to: "Bob", points: 2)
+assert bank.amount == 1
+t1 = bank.last
 assert t1.from == "Alice"
 assert t1.previous == nil
 
-assert x.balance("Alice") == -2
-assert x.balance("Bob") == 2
+assert bank.balance("Alice") == -2
+assert bank.balance("Bob") == 2
 
-x.send_points(from: "Bob", to: "Alice", points: 2)
-assert x.amount == 2
-t2 = x.last
+bank.send_points(from: "Bob", to: "Alice", points: 2)
+assert bank.amount == 2
+t2 = bank.last
 assert t2.from == "Bob"
 assert t2.previous == t1
 
-assert x.balance("Bob") == 0
-assert x.balance("Alice") == 0
+assert bank.balance("Bob") == 0
+assert bank.balance("Alice") == 0
