@@ -20,3 +20,7 @@ assert t.to == "Bob"
 
 t2 = Transaction.new(previous: t, from: "Bob", to: "Alice", points: 2)
 assert t2.previous == t
+
+
+class Transactions
+end
