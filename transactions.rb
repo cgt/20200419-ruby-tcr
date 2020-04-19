@@ -77,3 +77,4 @@ assert t2.from == "Bob"
 assert t2.previous == t1
 
 assert x.balance("Bob") == 0
+assert x.balance("Alice") == 0
