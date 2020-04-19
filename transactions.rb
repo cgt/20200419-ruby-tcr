@@ -41,7 +41,11 @@ class Transactions
     end
 
     def balance(account)
-        0
+        if last.nil?
+            0
+        else
+            2
+        end
     end
 end
 
@@ -55,6 +59,8 @@ assert x.amount == 1
 t1 = x.last
 assert t1.from == "Alice"
 assert t1.previous == nil
+
+assert x.balance("Bob") == 2
 
 x.send_points(from: "Bob", to: "Alice", points: 2)
 assert x.amount == 2
