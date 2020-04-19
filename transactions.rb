@@ -5,11 +5,14 @@ end
 assert true
 
 class Transaction
-    attr_reader :from
+    attr_reader :from, :to
 
-    def initialize(from:)
+    def initialize(from:, to:)
         @from = from
+        @to = to
     end
 end
 
-assert Transaction.new(from: "Alice").from == "Alice"
+t = Transaction.new(from: "Alice", to: "Bob")
+assert t.from == "Alice"
+assert t.to == "Bob"
