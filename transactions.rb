@@ -31,3 +31,7 @@ class Transactions
         @transactions << transaction
     end
 end
+
+x = Transactions.new
+x.add t
+x.add t2
