@@ -48,7 +48,10 @@ class Transactions
                 .select { |t| t.to == account }
                 .map { |t| t.points }
                 .reduce { |sum, points| sum + points }
-            withdrawals = 0
+            withdrawals = @transactions
+                .select { |t| t.from == account }
+                .map { |t| t.points }
+                .reduce(0) { |sum, points| sum + points }
             deposits - withdrawals
         end
     end
@@ -73,4 +76,4 @@ t2 = x.last
 assert t2.from == "Bob"
 assert t2.previous == t1
 
-assert x.balance("Bob") == 2 # wrong
+assert x.balance("Bob") == 0
