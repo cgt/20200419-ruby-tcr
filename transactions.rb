@@ -52,3 +52,4 @@ assert t1.previous == nil
 
 x.send_points(from: "Bob", to: "Alice", points: 2)
 assert x.amount == 2
+t2 = x.last
