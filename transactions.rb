@@ -22,6 +22,9 @@ b = Transaction.new(previous: a, from: "Bob", to: "Alice", points: 2)
 assert b.previous == a
 
 
+class NameAlreadyInUse < RuntimeError
+end
+
 class Bank
     def initialize
         @transactions = []
@@ -49,7 +52,7 @@ class Bank
         if @accounts.find { |account| account == name }.nil?
             @accounts << name
         else
-            raise RuntimeError.new
+            raise NameAlreadyInUse.new
         end
     end
 
@@ -81,7 +84,7 @@ assert bank.balance("Bob") == 0
 
 begin
     bank.open_account("Alice")
-rescue
+rescue NameAlreadyInUse
 else
     fail "should not be allowed to open account with name already in use"
 end
