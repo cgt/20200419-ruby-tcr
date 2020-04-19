@@ -48,6 +48,8 @@ class Bank
     def open_account(name)
         if @accounts.find { |account| account == name }.nil?
             @accounts << name
+        else
+            raise RuntimeError.new
         end
     end
 
@@ -78,7 +80,7 @@ assert bank.balance("Alice") == 0
 assert bank.balance("Bob") == 0
 
 begin
-    raise RuntimeError.new
+    bank.open_account("Alice")
 rescue RuntimeError
 else
     fail
