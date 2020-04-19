@@ -67,6 +67,9 @@ end
 bank = Bank.new
 assert bank.transactions == 0
 
+bank.open_account("Alice")
+bank.open_account("Bob")
+
 assert bank.balance("Alice") == 0
 assert bank.balance("Bob") == 0
 
