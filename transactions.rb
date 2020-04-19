@@ -34,17 +34,21 @@ class Transactions
         @transactions << t
     end
 
+    def amount
+        transactions.size
+    end
+
     def last
         transactions.last
     end
 end
 
 x = Transactions.new
-assert x.transactions.size == 0
+assert x.amount == 0
 
 x.send_points(from: "Alice", to: "Bob", points: 2)
-assert x.transactions.size == 1
+assert x.amount == 1
 assert x.last.from == "Alice"
 
 x.send_points(from: "Bob", to: "Alice", points: 2)
-assert x.transactions.size == 2
+assert x.amount == 2
