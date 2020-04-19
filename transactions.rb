@@ -35,3 +35,5 @@ end
 
 x = Transactions.new
 assert x.transactions.size == 0
+
+x.new_transaction(from: "Alice", to: "Bob", points: 2)
