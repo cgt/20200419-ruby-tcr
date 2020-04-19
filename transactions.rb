@@ -83,7 +83,7 @@ begin
     bank.open_account("Alice")
 rescue
 else
-    fail
+    fail "should not be allowed to open account with name already in use"
 end
 
 bank.send_points(from: "Alice", to: "Bob", points: 2)
