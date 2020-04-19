@@ -12,8 +12,11 @@ def assert_throws(exception_class, &block)
     end
 end
 
+class FooError < RuntimeError
+end
+
 assert_throws(RuntimeError) do
-    raise RuntimeError.new
+    raise FooError.new
 end
 
 class Transaction
