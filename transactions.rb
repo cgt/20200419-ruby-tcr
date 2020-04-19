@@ -10,6 +10,7 @@ def assert_throws(&block)
 end
 
 assert_throws do
+    raise RuntimeError.new
 end
 
 class Transaction
