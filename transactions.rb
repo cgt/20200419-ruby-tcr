@@ -32,7 +32,7 @@ class Bank
         @transactions << t
     end
 
-    def amount
+    def transactions
         @transactions.size
     end
 
@@ -65,13 +65,13 @@ class Bank
 end
 
 bank = Bank.new
-assert bank.amount == 0
+assert bank.transactions == 0
 
 assert bank.balance("Alice") == 0
 assert bank.balance("Bob") == 0
 
 bank.send_points(from: "Alice", to: "Bob", points: 2)
-assert bank.amount == 1
+assert bank.transactions == 1
 t1 = bank.last_transaction
 assert t1.from == "Alice"
 assert t1.previous == nil
@@ -80,7 +80,7 @@ assert bank.balance("Alice") == -2
 assert bank.balance("Bob") == 2
 
 bank.send_points(from: "Bob", to: "Alice", points: 2)
-assert bank.amount == 2
+assert bank.transactions == 2
 t2 = bank.last_transaction
 assert t2.from == "Bob"
 assert t2.previous == t1
