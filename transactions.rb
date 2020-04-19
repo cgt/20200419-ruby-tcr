@@ -6,6 +6,8 @@ def assert_throws(&block)
     begin
         block.call
     rescue
+    else
+        fail "did not raise exception"
     end
 end
 
