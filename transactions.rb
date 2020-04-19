@@ -2,8 +2,6 @@ def assert(bool)
     raise RuntimeError unless bool
 end
 
-assert true
-
 class Transaction
     attr_reader :from, :to
 
