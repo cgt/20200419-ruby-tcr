@@ -26,4 +26,7 @@ class Transactions
     def initialize
         @transactions = []
     end
+
+    def new_transaction(from:, to:, points:)
+    end
 end
