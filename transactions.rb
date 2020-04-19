@@ -23,4 +23,7 @@ assert t2.previous == t
 
 
 class Transactions
+    def initialize
+        @transactions = []
+    end
 end
