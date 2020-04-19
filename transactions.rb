@@ -5,7 +5,8 @@ end
 def assert_throws(&block)
     begin
         block.call
-    rescue
+    rescue => err
+        fail unless err.class == RuntimeError
     else
         fail "did not raise exception"
     end
