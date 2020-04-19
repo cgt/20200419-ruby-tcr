@@ -60,6 +60,13 @@ class Transactions
             .map { |t| t.points }
             .reduce(0) { |sum, points| sum + points }
     end
+
+    def withdrawals(account)
+        @transactions
+            .select { |t| t.from == account }
+            .map { |t| t.points }
+            .reduce(0) { |sum, points| sum + points }
+    end
 end
 
 x = Transactions.new
