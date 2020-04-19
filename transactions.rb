@@ -6,7 +6,7 @@ def assert_throws(exception_class, &block)
     begin
         block.call
     rescue => err
-        fail unless err.class == exception_class
+        fail "unexpected exception of type #{err.class} raised, expected #{exception_class}" unless err.class == exception_class
     else
         fail "did not raise exception"
     end
