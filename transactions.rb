@@ -46,7 +46,9 @@ class Bank
     end
 
     def open_account(name)
-        @accounts << name
+        if @accounts.find { |account| account == name }.nil?
+            @accounts << name
+        end
     end
 
     private
