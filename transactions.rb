@@ -77,6 +77,9 @@ bank.open_account("Bob")
 assert bank.balance("Alice") == 0
 assert bank.balance("Bob") == 0
 
+begin
+end
+
 bank.send_points(from: "Alice", to: "Bob", points: 2)
 assert bank.transactions == 1
 t1 = bank.last_transaction
