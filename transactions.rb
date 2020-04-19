@@ -44,11 +44,7 @@ class Transactions
         if last.nil?
             0
         else
-            withdrawals = @transactions
-                .select { |t| t.from == account }
-                .map { |t| t.points }
-                .reduce(0) { |sum, points| sum + points }
-            deposits(account) - withdrawals
+            deposits(account) - withdrawals(account)
         end
     end
 
