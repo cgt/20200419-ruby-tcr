@@ -26,12 +26,4 @@ class Transactions
     def initialize
         @transactions = []
     end
-
-    def add(transaction)
-        @transactions << transaction
-    end
 end
-
-x = Transactions.new
-x.add t
-x.add t2
