@@ -67,3 +67,5 @@ assert x.amount == 2
 t2 = x.last
 assert t2.from == "Bob"
 assert t2.previous == t1
+
+assert x.balance("Bob") == 2
