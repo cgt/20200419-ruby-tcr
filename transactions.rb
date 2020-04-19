@@ -2,6 +2,13 @@ def assert(bool)
     raise RuntimeError unless bool
 end
 
+def assert_throws(&block)
+    begin
+        block.call
+    rescue
+    end
+end
+
 class Transaction
     attr_reader :previous, :from, :to, :points
 
