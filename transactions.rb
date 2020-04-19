@@ -32,3 +32,6 @@ class Transactions
     def new_transaction(from:, to:, points:)
     end
 end
+
+x = Transactions.new
+assert x.transactions
