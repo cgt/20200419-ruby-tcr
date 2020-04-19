@@ -78,6 +78,8 @@ assert bank.balance("Alice") == 0
 assert bank.balance("Bob") == 0
 
 begin
+    raise RuntimeError.new
+rescue
 end
 
 bank.send_points(from: "Alice", to: "Bob", points: 2)
