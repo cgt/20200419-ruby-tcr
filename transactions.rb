@@ -18,3 +18,4 @@ assert t.from == "Alice"
 assert t.to == "Bob"
 
 t2 = Transaction.new(previous: t, from: "Bob", to: "Alice")
+assert t2.previous == t
