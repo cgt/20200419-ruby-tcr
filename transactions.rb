@@ -35,11 +35,11 @@ class Transactions
     end
 
     def amount
-        transactions.size
+        @transactions.size
     end
 
     def last
-        transactions.last
+        @transactions.last
     end
 end
 
